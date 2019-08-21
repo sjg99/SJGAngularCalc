@@ -3,7 +3,7 @@
   <h1>
     Welcome to {{ title }}!
   </h1>
-  <p>This is a calculator for basic operations</p>
+  <p>This is a calculator for basic operations</p><button (click)="Reset()">Reset</button>
   <div style="display:flex; width:100%; justify-content:center;">
     <div style="padding:0.5em 2em;"><input type="radio" value="Addition" [(ngModel)]="Operation" (change)="OperatorChange()">Addition(+)</div>
     <div style="padding:0.5em 2em;"><input type="radio" value="Substraction" [(ngModel)]="Operation" (change)="OperatorChange()">Substraction(-)</div>
