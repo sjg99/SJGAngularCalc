@@ -26,11 +26,26 @@ export class AppComponent {
     }
   }
   Calculate(){
-    if(this.Number1!='' && this.Number2!=''){
-
+    this.showres=false;
+    if((this.Number1 && this.Number2) || (this.Number1=='0' && this.Number2=='0') || (this.Number1 && this.Number2=='0') || (this.Number1=='0' && this.Number2)){
+      if(this.Operator=='+'){
+        this.Result=(parseFloat(this.Number1)+ parseFloat(this.Number2)).toString();
+      }
+      if(this.Operator=='-'){
+        this.Result=(parseFloat(this.Number1)- parseFloat(this.Number2)).toString();
+      }
+      if(this.Operator=='*'){
+        this.Result=(parseFloat(this.Number1)* parseFloat(this.Number2)).toString();
+      }
+      if(this.Operator=='/'){
+        if(this.Number2!='0')this.Result=(parseFloat(this.Number1)/ parseFloat(this.Number2)).toString();
+        else this.Result="You can´t divide by 0";
+      }
+      if(this.Operator=='%'){
+        this.Result=(parseFloat(this.Number1)% parseFloat(this.Number2)).toString();
+      }
     }
-    else{
-      this.showres=false;
+    else{      
       this.Result="Both Fields must have a value";
     }
   }
